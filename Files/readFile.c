@@ -2,7 +2,8 @@
 
 int main() {
     FILE *file;
-    char c;
+    char line[255];
+    int lineCount=0;
 
     // Open the file in read mode
     file = fopen("quotes.txt", "r");
@@ -13,10 +14,16 @@ int main() {
         return 1;
     }
 
-    // Read and display the contents of the file character by character
-    while ((c = fgetc(file)) != EOF) {
-        printf("%c", c);
+    /* When fgets() successfully reads a line from the file it returns a pointer to the character array where the line was stored.
+    If an error occurs or the end-of-file is reached before any characters are read, fgets() returns a null pointer (NULL).
+     */
+   
+    while (fgets(line, sizeof(line), file) != NULL) {
+        printf("%s", line);
+        lineCount++;
     }
+    //Print nb line
+    printf("File has been read successfully \nNB line : %d \n",lineCount);
 
     // Close the file
     fclose(file);
