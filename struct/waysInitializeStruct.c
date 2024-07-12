@@ -29,7 +29,9 @@ int main()
     struct Person person1 = {"khaled", 25};
     // Initializing using designated initializers
     struct Person person2 = {.name = "othman", .age = 30};
-
+    // Copy the contents of person1 to person2
+    struct Person person3;
+    person3=person2;
 
     return 0;
 }
