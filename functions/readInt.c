@@ -5,17 +5,15 @@ int readInt(int *variable);
 int main()
 {
     int a=0;
-    a=readInt(&a);
+    a=readInt();
     printf("var = %d \n",a);
     return 0;
 }
 
-int readInt(int *variable){
-
-    printf("Enter var :\n");
-    scanf("%d",variable);
-
-    return *variable;
+int readInt(void){
+    int var;
+    scanf("%d",var);
+    return var;
 
 }
 
