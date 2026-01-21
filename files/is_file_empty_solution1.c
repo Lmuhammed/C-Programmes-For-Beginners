@@ -3,8 +3,12 @@
 
 int main() {
 	
-	char *file_name="file.txt";
+    char *file_name="file.txt";
     FILE *file = fopen(file_name, "r");
+    if (file == NULL ){
+    perror("File error");//Print error message based on errno
+    return -1;
+    }
     struct stat file_status;
     if (stat(file_name,&file_status) < 0)
     return -1;
