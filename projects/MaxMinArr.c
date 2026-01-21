@@ -8,8 +8,8 @@ int main() {
     printf("Enter the number of elements in the array: ");
     scanf("%d", &n);
 
-    printf("Enter %d elements:\n", n);
     for (i = 0; i < n; i++) {
+        printf("Enter %dth elements:\n", i+1);
         scanf("%d", &arr[i]);
     }
 
