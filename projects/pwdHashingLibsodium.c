@@ -17,7 +17,7 @@ bool hash_f(const char *clear_text, size_t clear_text_len,char *hash){
             clear_text_len,
             crypto_pwhash_OPSLIMIT_INTERACTIVE,
             crypto_pwhash_MEMLIMIT_INTERACTIVE) != 0)
-  return NULL;
+  return false;
     
 return true;
 }
